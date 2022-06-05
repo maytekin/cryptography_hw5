@@ -55,35 +55,37 @@ function my_base64_decode($str)
 
 
 
-while(1){
-echo("\nThis program can encode/decode an input with by using base64 encoding/decoding algorithm");
-echo("\n\nEnter a number to select the operation:");
-echo("\n- Select 1 to encode");
-echo("\n- Select 2 to decode");
-echo("\n- Select 3 to exit\n");
+while(true){
 
-$select_operation = (int)readline("\nSelect the operation:");
+    echo("\nThis program can encode/decode an input with by using base64 encoding/decoding algorithm");
+    echo("\n\nEnter a number to select the operation:");
+    echo("\n- Select 1 to encode");
+    echo("\n- Select 2 to decode");
+    echo("\n- Select 3 to exit\n");
 
-if ($select_operation == 1) {
-	$input = readline("\nEnter a string to encode: ");
-	$base64_encoded_output = my_base64_encode($input);
+    $select_operation = (int)readline("\nSelect the operation:");
 
-	echo("\nUser given input to encode : ".$input);
-	echo("\n-------------------------------------------");
-	echo("\nBase64 encode : ".$base64_encoded_output);
-	echo ("\n\n------------------------------------------------------------\n\n");
-}elseif ($select_operation == 2) {
-        $input = readline("\nEnter a string to decode: ");
-        $base64_decoded_output = my_base64_decode($input);
+    if ($select_operation == 1) {
+    	$input = readline("\nEnter a string to encode: ");
+    	$base64_encoded_output = my_base64_encode($input);
 
-	echo("\nUser given input to decode : ".$input);
-        echo("\n-------------------------------------------");
-        echo("\nBase64 decode : ".$base64_decoded_output);
-        echo ("\n\n------------------------------------------------------------\n\n");
+    	echo("\nUser given input to encode : ".$input);
+    	echo("\n-------------------------------------------");
+    	echo("\nBase64 encode : ".$base64_encoded_output);
+    	echo ("\n\n------------------------------------------------------------\n\n");
+    }elseif ($select_operation == 2) {
+            $input = readline("\nEnter a string to decode: ");
+            $base64_decoded_output = my_base64_decode($input);
 
-}elseif ($select_operation == 3) {
-	exit("Exitting.............\n.........\n.......\n.....\n...\n.\n");	
-}else {
-	var_dump('Wrong input!!!');
-}}
+    	echo("\nUser given input to decode : ".$input);
+            echo("\n-------------------------------------------");
+            echo("\nBase64 decode : ".$base64_decoded_output);
+            echo ("\n\n------------------------------------------------------------\n\n");
+
+    }elseif ($select_operation == 3) {
+    	exit("Exitting.............\n.........\n.......\n.....\n...\n.\n");	
+    }else {
+    	var_dump('Wrong input!!!');
+    }
+}
 

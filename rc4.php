@@ -38,31 +38,31 @@ function rc4a($str, $key)
 }
 
 while(true){ 
-echo("\n#####################################\n");	
-echo("#####################################\n");
-echo("#####################################\n");
-echo("This is PHP program that uses RC4 Stream Cipher to encrypt a message");
-echo("\n#####################################");
-echo("\n#####################################");
-echo("\n#####################################\n");
 
-$input_text = readline("Enter a string to encrypt: ");
-$input_key_encrypt = readline("Enter an encrytion key to encrypt: ");
-$input_key_decrypt = readline("Enter the encryption key to decrypt: ");
-echo("\n-------------------------------------\n");
-echo("-------------------------------------\n");
-echo("Entered text to encrypt: ".$input_text."\n");
-echo("Entered key to encrypt: ".$input_key_encrypt."\n");
-echo("Entered key text to decrypt: ".$input_key_decrypt."\n");
+    echo("\n#####################################\n");	
+    echo("#####################################\n");
+    echo("#####################################\n");
+    echo("This is PHP program that uses RC4 Stream Cipher to encrypt a message");
+    echo("\n#####################################");
+    echo("\n#####################################");
+    echo("\n#####################################\n");
 
-if($input_key_encrypt !== $input_key_decrypt){
-	echo("\nKeys do not match!!! ->> Unsuccesful decryption attempt!!!\n");
+    $input_text = readline("Enter a string to encrypt: ");
+    $input_key_encrypt = readline("Enter an encrytion key to encrypt: ");
+    $input_key_decrypt = readline("Enter the encryption key to decrypt: ");
+    echo("\n-------------------------------------\n");
+    echo("-------------------------------------\n");
+    echo("Entered text to encrypt: ".$input_text."\n");
+    echo("Entered key to encrypt: ".$input_key_encrypt."\n");
+    echo("Entered key text to decrypt: ".$input_key_decrypt."\n");
+
+    # Throw an error message since the decryption will be unsuccesful and it will return an non-readable value
+    if($input_key_encrypt !== $input_key_decrypt){
+    	echo("\nKeys do not match!!! ->> Unsuccesful decryption attempt!!!\n");
+    }
+
+    echo("Decrypted text: ");
+    echo(rc4a(rc4a($input_text,$input_key_encrypt),$input_key_decrypt));
+    echo("\n\n");
 }
-
-echo("Decrypted text: ");
-echo(rc4a(rc4a($input_text,$input_key_encrypt),$input_key_decrypt));
-echo("\n\n");
-}
-
-?>
 
