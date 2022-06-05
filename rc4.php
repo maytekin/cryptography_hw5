@@ -8,7 +8,6 @@ function rc4a($str, $key)
     }
  
     for ($j = 0, $i = 0; $i < 256; $i++){
-
         $j = ($j + $s[$i] + ord($key[$i % strlen($key)])) % 256;
         $x = $s[$i];
         $s[$i] = $s[$j];
@@ -21,7 +20,6 @@ function rc4a($str, $key)
 
     # Pseudo-random generation algorithm
     for ($i = 0, $j = 0, $j2 = 0, $res = '', $y = 0; $y < strlen($str); $y++){
-
         $i = ($i + 1) % 256;
         $j = ($j + $s[$i]) % 256;
         $x = $s[$i];
